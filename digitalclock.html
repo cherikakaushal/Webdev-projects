@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Clock </title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(to bottom, #000 0%, #333 100%);
+        color: #fff;
+    }
+    .clock {
+        font-size: 4em;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Text shadow for visibility */
+    }
+</style>
+</head>
+<body>
+
+<div class="clock" id="clock"></div>
+
+<script>
+function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var period = hours < 12 ? 'AM' : 'PM';
+
+    // Convert hours to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // Handle midnight
+
+    // Add leading zeros to minutes and seconds
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    var timeString = hours + ':' + minutes + ':' + seconds + ' ' + period;
+    document.getElementById('clock').textContent = timeString;
+
+    // Determine day or night background
+    var currentHour = now.getHours();
+    var body = document.body;
+    if (currentHour >= 6 && currentHour < 18) {
+        // Daytime gradient
+        body.style.background = 'linear-gradient(to bottom, #87CEEB 0%, #1E90FF 100%)';
+    } else {
+        // Nighttime gradient
+        body.style.background = 'linear-gradient(to bottom, #000 0%, #333 100%)';
+    }
+
+    // Update every second
+    setTimeout(updateClock, 1000);
+}
+
+// Initial call to update clock
+updateClock();
+</script>
+
+</body>
+</html>

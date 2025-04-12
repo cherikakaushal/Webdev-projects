@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calvin Klein - Clothing Online Store</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #343a40; /* Dark gray text color */
+    }
+    .navbar {
+      background-color: #343a40; /* Dark gray navbar */
+    }
+    .navbar-brand {
+      color: #fff; /* White navbar brand text */
+      font-weight: bold;
+    }
+    .navbar-nav .nav-link {
+      color: #fff; /* White navbar links */
+    }
+    .jumbotron {
+      background: url('https://images.unsplash.com/photo-1567437660028-f41e8b24cfb0') no-repeat center center;
+      background-size: cover;
+      color: #fff; /* White text for jumbotron */
+      text-align: center;
+      padding: 100px 20px;
+      margin-bottom: 30px;
+    }
+    .jumbotron h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    .jumbotron p {
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    }
+    .card {
+      border: none;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .card-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .card-body ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .card-body ul li {
+      padding: 5px 0;
+    }
+    .footer {
+      background-color: #343a40; /* Dark gray footer */
+      color: #fff; /* White text for footer */
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Calvin Klein</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#new-arrivals">New Arrivals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mens-section">Men's</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#womens-section">Women's</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#special-offers">Special Offers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to Calvin Klein</h1>
+      <p class="lead">Explore our exclusive collection and customize as per your needs.</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div id="new-arrivals" class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">New Arrivals</h5>
+            <ul>
+              <li>New Season Collection</li>
+              <li>Summer Essentials</li>
+              <li>Fall/Winter Trends</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mens-section" class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Men's Section</h5>
+            <ul>
+              <li>Shirts & T-shirts</li>
+              <li>Pants & Jeans</li>
+              <li>Suits & Blazers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="womens-section" class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Women's Section</h5>
+            <ul>
+              <li>Dresses & Skirts</li>
+              <li>Tops & Blouses</li>
+              <li>Outerwear & Jackets</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="special-offers" class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Special Offers</h5>
+            <ul>
+              <li>Spring Clearance Sale</li>
+              <li>Exclusive Online Discounts</li>
+              <li>Flash Sales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Calvin Klein. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js" integrity="sha384-wMN5G9O0QgqVuHgg9m9AW1nqB0u7f+5EZUz8C/Hr8FFtlwJ/4W5+skCnZISZ6vuW" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+2ARPpD6E8/RFb/xfOcZ2sroG85KsO6HpwX" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+

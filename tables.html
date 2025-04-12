@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compact Box Model and Students' Data</title>
+<style>
+    /* CSS for compact box model and students' data */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        width: 90%;
+        max-width: 600px;
+        background: linear-gradient(135deg, #4e54c8, #8f94fb);
+        border: 2px solid #333;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        box-sizing: border-box;
+        color: #fff;
+    }
+    .container table, .container .students-list {
+        width: 100%;
+        margin-top: 10px;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #fff;
+        padding: 6px;
+        text-align: center;
+    }
+    th {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    .students-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .student {
+        padding: 8px;
+        border: 1px solid #fff;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    .student-info {
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Students' Data</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Class</th>
+                <th>Roll No.</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sukhchain</td>
+                <td>12th B</td>
+                <td>1</td>
+                <td>98</td>
+            </tr>
+            <tr>
+                <td>Simran</td>
+                <td>12th B</td>
+                <td>2</td>
+                <td>89</td>
+            </tr>
+            <tr>
+                <td>Aayush</td>
+                <td>12th B</td>
+                <td>3</td>
+                <td>74</td>
+            </tr>
+            <tr>
+                <td>Kabir</td>
+                <td>12th B</td>
+                <td>4</td>
+                <td>91</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="students-list">
+        <div class="student">
+            <div class="student-info">Jiya</div>
+            <div class="student-info">Class: 12th B</div>
+            <div class="student-info">Roll No: 1</div>
+        </div>
+        <div class="student">
+            <div class="student-info">Simran</div>
+            <div class="student-info">Class: 12th B</div>
+            <div class="student-info">Roll No: 2</div>
+        </div>
+        <div class="student">
+            <div class="student-info">Aayush</div>
+            <div class="student-info">Class: 12th B</div>
+            <div class="student-info">Roll No: 3</div>
+        </div>
+        <div class="student">
+            <div class="student-info">Kabir</div>
+            <div class="student-info">Class: 12th B</div>
+            <div class="student-info">Roll No: 4</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+

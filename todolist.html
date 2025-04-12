@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #fddde6; /* Light pink background */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+    }
+    .container {
+        width: 90%; /* Adjust width as needed */
+        max-width: 600px;
+        background-color: #fff; /* White background for the container */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #6d4c41; /* Brownish color for the heading */
+    }
+    .todo-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #fbe9e7; /* Light beige background for tasks */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .todo-item input[type="checkbox"] {
+        margin-right: 10px;
+    }
+    .todo-item label {
+        flex: 1;
+        color: #6d4c41; /* Brownish color for task text */
+    }
+    .input-container {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .input-container input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .input-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ff8a80; /* Light pink button */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    .input-container button:hover {
+        background-color: #ff6f61; /* Darker pink on hover */
+    }
+    .clear-button {
+        display: none; /* Initially hide the clear button */
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ff1744; /* Red clear button */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .clear-button:hover {
+        background-color: #d50000; /* Darker red on hover */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>To-Do List</h1>
+
+    <div class="input-container">
+        <input type="text" id="taskInput" placeholder="Enter a new task...">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div id="taskList">
+        <!-- Tasks will be dynamically added here -->
+    </div>
+
+    <button class="clear-button" onclick="clearList()" id="clearButton">Clear List</button>
+
+</div>
+
+<script>
+    function addTask() {
+        var taskInput = document.getElementById("taskInput");
+        var taskList = document.getElementById("taskList");
+        var clearButton = document.getElementById("clearButton");
+
+        if (taskInput.value.trim() !== "") {
+            // Create a new task item
+            var newTask = document.createElement("div");
+            newTask.classList.add("todo-item");
+
+            // Checkbox
+            var checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = "task" + (taskList.childElementCount + 1);
+
+            // Label
+            var label = document.createElement("label");
+            label.setAttribute("for", checkbox.id);
+            label.textContent = taskInput.value;
+
+            // Append checkbox and label to new task item
+            newTask.appendChild(checkbox);
+            newTask.appendChild(label);
+
+            // Append new task item to task list
+            taskList.appendChild(newTask);
+
+            // Clear input field
+            taskInput.value = "";
+
+            // Show clear button if there are tasks
+            clearButton.style.display = "block";
+        }
+    }
+
+    function clearList() {
+        var taskList = document.getElementById("taskList");
+        taskList.innerHTML = ""; // Clear all HTML inside the taskList div
+
+        // Hide clear button after clearing list
+        var clearButton = document.getElementById("clearButton");
+        clearButton.style.display = "none";
+    }
+</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Removal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-family: 'Georgia', serif;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-control:focus {
+            border-color: #aaa;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            font-size: 18px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #ff6f61;
+        }
+        .btn-primary:hover {
+            background-color: #e65c55;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Duplicate Removal</h2>
+        <div class="form-group">
+            <label for="builtin-method">Built-in Method</label>
+            <input type="text" id="builtin-method" class="form-control" placeholder="Enter data">
+            <button type="button" class="btn btn-primary mt-2" onclick="removeDuplicates('builtin')">Remove Duplicates</button>
+            <div id="builtin-result" class="result"></div>
+        </div>
+        <div class="form-group">
+            <label for="array-method">Array Method</label>
+            <input type="text" id="array-method" class="form-control" placeholder="Enter data">
+            <button type="button" class="btn btn-primary mt-2" onclick="removeDuplicates('array')">Remove Duplicates</button>
+            <div id="array-result" class="result"></div>
+        </div>
+        <div class="form-group">
+            <label for="string-method">String Method</label>
+            <input type="text" id="string-method" class="form-control" placeholder="Enter data">
+            <button type="button" class="btn btn-primary mt-2" onclick="removeDuplicates('string')">Remove Duplicates</button>
+            <div id="string-result" class="result"></div>
+        </div>
+    </div>
+    <script>
+        function removeDuplicates(method) {
+            let input, output, resultDiv;
+            if (method === 'builtin') {
+                input = document.getElementById('builtin-method').value;
+                output = [...new Set(input.split(','))].join(', ');
+                resultDiv = document.getElementById('builtin-result');
+            } else if (method === 'array') {
+                input = document.getElementById('array-method').value;
+                output = removeDuplicatesFromArray(input.split(',')).join(', ');
+                resultDiv = document.getElementById('array-result');
+            } else if (method === 'string') {
+                input = document.getElementById('string-method').value;
+                output = removeDuplicatesFromString(input);
+                resultDiv = document.getElementById('string-result');
+            }
+            resultDiv.textContent = `Result: ${output}`;
+        }
+
+        function removeDuplicatesFromArray(arr) {
+            return arr.filter((item, index) => arr.indexOf(item) === index);
+        }
+
+        function removeDuplicatesFromString(str) {
+            return str
+                .split(',')
+                .map((item, index, self) => self.indexOf(item) === index ? item : '')
+                .filter(item => item !== '')
+                .join(', ');
+        }
+    </script>
+</body>
+</html>
+
+
+

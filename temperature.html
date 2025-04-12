@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Conversion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+       .container {
+            width: 50%;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+       .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Temperature Conversion</h2>
+        <input type="number" id="temp" placeholder="Enter temperature">
+        <select id="from">
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+        </select>
+        <select id="to">
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+        </select>
+        <button id="convert">Convert</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const tempInput = document.getElementById('temp');
+        const fromSelect = document.getElementById('from');
+        const toSelect = document.getElementById('to');
+        const convertButton = document.getElementById('convert');
+        const resultDiv = document.getElementById('result');
+
+        convertButton.addEventListener('click', () => {
+            const temp = parseFloat(tempInput.value);
+            const from = fromSelect.value;
+            const to = toSelect.value;
+
+            if (from === 'Celsius' && to === 'Fahrenheit') {
+                const result = (temp * 9/5) + 32;
+                resultDiv.textContent = `${temp}°C is equal to ${result.toFixed(2)}°F`;
+            } else if (from === 'Fahrenheit' && to === 'Celsius') {
+                const result = (temp - 32) * 5/9;
+                resultDiv.textContent = `${temp}°F is equal to ${result.toFixed(2)}°C`;
+            } else {
+                resultDiv.textContent = 'Invalid conversion';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array and String Methods Example</title>
+</head>
+<body>
+  <h1>Array and String Methods Example</h1>
+
+  <script>
+    // Example array
+    const numbers = [1, 2, 3, 4, 5];
+
+    // Array method: map
+    const squaredNumbers = numbers.map(num => num * num);
+    console.log("Mapped array:", squaredNumbers);
+
+    // Array method: forEach
+    numbers.forEach(num => {
+      console.log("Current number:", num);
+    });
+
+    // Array method: reduce
+    const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    console.log("Sum of array:", sum);
+
+    // Example string
+    const message = "Hello, World!";
+
+    // String method: toUpperCase
+    const uppercasedMessage = message.toUpperCase();
+    console.log("Uppercased message:", uppercasedMessage);
+
+    // String method: toLowerCase
+    const lowercasedMessage = message.toLowerCase();
+    console.log("Lowercased message:", lowercasedMessage);
+  </script>
+
+</body>
+</html>
